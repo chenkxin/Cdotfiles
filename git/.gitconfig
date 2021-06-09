@@ -1,0 +1,11 @@
+[user]
+	name = chen
+	email = 37500268+chenxygh@users.noreply.github.com
+[alias]
+	st = status
+	ci = commit
+	pl = pull
+	ps = push
+	br = branch
+	ad = add
+	cl = clone
