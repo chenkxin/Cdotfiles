@@ -5,22 +5,19 @@ if [ ! -f ~/.ssh/id_rsa ];then
 else
 	echo "id_rsa has created ..."
 fi
-
-path=/home/ckx/.ssh/id_rsa
-while read line
+username=`whoami`
+user="chenkangxin"
+passwd="ckx"
+ip="10.22.148.86"
+for i in {0..6}
 do
-	user=`echo $line | cut -d " " -f 3`
-	passwd=`echo $line | cut -d " " -f 4`
-	ip=`echo $line | cut -d " " -f 1`
-	port=`echo $line | cut -d " " -f 2`
-
 	expect <<EOF
 		set timeout 10
-		spawn ssh-copy-id -p $port -i $path $user@$ip
+		spawn ssh-copy-id l${i}
 	expect {
 		"yes/no" { send "yes\n";exp_continue }
 		"password" { send "$passwd\n"}
 	}
 	expect "password" { send "$passwd\n" }
 EOF
-done < hosts 
+done
