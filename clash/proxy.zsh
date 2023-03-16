@@ -1,4 +1,4 @@
-PORT=7899
+PORT=7890
 SOCKET_PORT=7891
 
 # 测试能否成功访问
@@ -41,7 +41,7 @@ proxy () {
         _access_url https://www.google.com/
         echo testing github...
         _access_url https://github.com/
-	elif [ "$1" = "show" ]; then
+	elif [ "$1" = "info" ]; then
         echo http_proxy: $http_proxy
         echo HTTP_PROXY: $HTTP_PROXY
         echo https_proxy: $https_proxy
@@ -50,3 +50,8 @@ proxy () {
         echo ALL_PROXY: $ALL_PROXY
 	fi
 }
+
+alias ptest="proxy test"
+alias pon="proxy on"
+alias poff="proxy off"
+alias pinfo="proxy info"
