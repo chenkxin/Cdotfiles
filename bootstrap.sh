@@ -31,3 +31,5 @@ main() {
     cd -
     exec zsh
 }
+
+main
