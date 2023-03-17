@@ -5,7 +5,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 DOTFILES=$HOME/.local/.Cdotfiles
 zinit ice depth=1; zinit light romkatv/powerlevel10k
-. $DOTFILES/.p10k.zsh
+[[ ! -f $DOTFIELS/.p10k.zsh ]] || . $DOTFILES/.p10k.zsh
 
 zinit light zsh-users/zsh-autosuggestions
 zinit load zdharma-continuum/history-search-multi-word
