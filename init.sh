@@ -31,11 +31,15 @@ DOTFILES=$HOME/.local/.Cdotfiles
 
 # zsh
 . $DOTFILES/zsh/theme.zsh
+. $DOTFILES/zsh/alias.zsh
 source_if_exists ~/.zsh_profile
 
 # clash
-. $DOTFILES/clash.zsh
-. $DOTFILES/proxy.zsh
+. $DOTFILES/clash/clash.zsh
+. $DOTFILES/clash/proxy.zsh
+
+# git
+. $DOTFILES/git/alias.zsh
 
 # 整理 PATH，删除重复路径
 if [ -n "$PATH" ]; then
@@ -53,28 +57,3 @@ if [ -n "$PATH" ]; then
 fi
 
 export PATH
-
-# 如果是 bash/zsh 的话，source 一下 ~/.local/etc/function.sh
-if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
-    # run script for interactive mode of bash/zsh
-    if [[ $- == *i* ]] && [ -z "$_INIT_SH_NOFUN" ]; then
-        if [ -f "$HOME/.local/etc/function.sh" ]; then
-            . "$HOME/.local/etc/function.sh"
-        fi
-    fi
-fi
-
-# 如果是登陆模式，那么 source 一下 ~/.local/etc/login.sh
-if [ -n "$BASH_VERSION" ]; then
-    if shopt -q login_shell; then
-        if [ -f "$HOME/.local/etc/login.sh" ] && [ -z "$_INIT_SH_NOLOG" ]; then
-            . "$HOME/.local/etc/login.sh"
-        fi
-    fi
-elif [ -n "$ZSH_VERSION" ]; then
-    if [[ -o login ]]; then
-        if [ -f "$HOME/.local/etc/login.sh" ] && [ -z "$_INIT_SH_NOLOG" ]; then
-            . "$HOME/.local/etc/login.sh"
-        fi
-    fi
-fi

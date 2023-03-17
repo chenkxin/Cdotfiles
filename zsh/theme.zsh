@@ -13,8 +13,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # p10k
 DOTFILES=$HOME/.local/.Cdotfiles
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-[[ ! -f $DOTFIELS/.p10k.zsh ]] || . $DOTFILES/.p10k.zsh
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+[[ ! -f $DOTFILES/zsh/.p10k.zsh ]] || . $DOTFILES/zsh/.p10k.zsh
 
 # some plugins
 zinit light zsh-users/zsh-autosuggestions
