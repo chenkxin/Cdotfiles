@@ -6,7 +6,7 @@ set -ex
 cd build
 file="clash-linux-amd64-v3-v1.13.0"
 url=https://github.com/Dreamacro/clash/releases/download/v1.13.0/$file.gz
-[ ! -f $file ] && wget $url && gzip -d $file.gz
+[ ! -f $file ] && wget -c $url && gzip -d $file.gz
 chmod u+x $file
 
 # 安装 clash，设置环境变量和软链接
