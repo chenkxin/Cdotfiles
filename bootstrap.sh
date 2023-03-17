@@ -10,14 +10,12 @@ DOTFILES=$HOME/.local/.Cdotfiles
 check_project() {
 	if [ ! -d "$DOTFILES" ]; then
 		git clone https://github.com/chenxygh/Cdotfiles $DOTFILES
-		mkdir -p $DOTFILES/downloads
 	fi
-	cd $QDOTFILES
 }
 
 setup_config() {
 	# zshrc
-	cp zsh/.zshrc ~
+	cp zsh/.zshrc $HOME
 	cp_file_if_exists zsh/.zsh_profile ~
 	
 	# clash
@@ -27,7 +25,9 @@ setup_config() {
 }
 
 main() {
+    cd $DOTFILES
     check_project
     setup_config
+    cd -
     exec zsh
 }
