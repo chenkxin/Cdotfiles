@@ -5,6 +5,7 @@ cp_file_if_exists() {
 }
 
 DOTFILES=$HOME/.local/.Cdotfiles
+
 # initialization for the dotfiles project
 check_project() {
 	if [ ! -d "$DOTFILES" ]; then

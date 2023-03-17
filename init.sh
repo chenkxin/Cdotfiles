@@ -18,18 +18,6 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# 判断 ~/.local/etc/config.sh 存在的话，就 source 它一下
-if [ -f "$HOME/.local/etc/config.sh" ]; then
-    . "$HOME/.local/etc/config.sh"
-fi
-
-# 判断 ~/.local/etc/local.sh 存在的话，就 source 它一下
-if [ -f "$HOME/.local/etc/local.sh" ]; then
-    . "$HOME/.local/etc/local.sh"
-fi
-
-##################### --------------------------- ########################
-
 # 判断文件是否存在， 若存在， 则 source 一下
 source_if_exists() {
   file="$1"
