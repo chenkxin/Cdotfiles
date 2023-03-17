@@ -25,8 +25,8 @@ setup_config() {
 }
 
 main() {
-    cd $DOTFILES
     check_project
+    cd $DOTFILES
     setup_config
     cd -
     exec zsh
