@@ -39,19 +39,15 @@ source_if_exists() {
   fi
 }
 
-DOTFILES=$HOME/local/.Cdotfiles
+DOTFILES=$HOME/.local/.Cdotfiles
 
 # zsh
-if [ -d $HOME/.oh-my-zsh ];then
-        export ZSH=$HOME/.oh-my-zsh
-        plugins=(git)
-        ZSH_THEME="robbyrussell"
-        source $ZSH/oh-my-zsh.sh
-fi
 . $DOTFILES/zsh/theme.zsh
-
 source_if_exists ~/.zsh_profile
 
+# clash
+. $DOTFILES/clash.zsh
+. $DOTFILES/proxy.zsh
 
 # 整理 PATH，删除重复路径
 if [ -n "$PATH" ]; then
