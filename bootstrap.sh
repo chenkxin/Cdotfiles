@@ -38,6 +38,9 @@ setup_config() {
 	cp git/.gitconfig ~
 
 	# ssh
+    if [ ! -d "$HOME/.vim" ]; then
+        mkdir $HOME/.vim
+    fi
 	cp_file_if_exists ssh/config ~/.ssh
 }
 
