@@ -67,7 +67,6 @@ EOF
 	elif [ "$1" = "gitoff" ]; then
         git config --global --unset http.https://github.com.proxy
         git config --global --unset https.https://github.com.proxy
-        cat >> $HOME/.ssh/config
         sed -i '/github/,+5d' $HOME/.ssh/config
 	fi
 }
