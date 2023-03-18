@@ -22,6 +22,23 @@ setup_config() {
 	if [ ! -f $HOME/.local/bin/clash ]; then
 		bash $DOTFILES/clash/install.sh
 	fi
+
+    # tmux
+    ln -sT $DOTFILES/tmux/.tmux/.tmux.conf $HOME/.tmux.conf
+    cp $DOTFILES/tmux/.tmux/.tmux.conf.local $HOME
+
+    # vim
+	if [ ! -d "$HOME/.vim" ]; then
+		mkdir $HOME/.vim
+	fi
+    ln -sT $DOTFILES/vim/vim-init $HOME/.vim/vim-init
+    cp $DOTFILES/vim/.vimrc $HOME
+
+	# git
+	cp git/.gitconfig ~
+
+	# ssh
+	cp_file_if_exists ssh/config ~/.ssh
 }
 
 main() {
