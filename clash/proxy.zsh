@@ -53,6 +53,22 @@ proxy () {
         clash
 	elif [ "$1" = "down" ]; then
         pkill -9 clash
+	elif [ "$1" = "giton" ]; then
+        git config --global http.https://github.com.proxy socks5h://127.0.0.1:$SOCKET_PORT
+        git config --global https.https://github.com.proxy socks5h://127.0.0.1:$SOCKET_PORT
+		cat >> $HOME/.ssh/config <<EOF
+Host github.com
+	Hostname ssh.github.com
+	Port 443
+	User git
+	ProxyCommand nc -v -x  127.0.0.1:7891 %h %p
+
+EOF
+	elif [ "$1" = "gitoff" ]; then
+        git config --global --unset http.https://github.com.proxy
+        git config --global --unset https.https://github.com.proxy
+        cat >> $HOME/.ssh/config
+        sed -i '/github/,+5d' $HOME/.ssh/config
 	fi
 }
 
@@ -62,3 +78,6 @@ alias poff="proxy off"
 alias pinfo="proxy info"
 alias pup="proxy up"
 alias pdown="proxy down"
+alias pgon="proxy giton"
+alias pgoff="proxy gitoff"
+
