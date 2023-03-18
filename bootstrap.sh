@@ -9,7 +9,7 @@ DOTFILES=$HOME/.local/.Cdotfiles
 # initialization for the dotfiles project
 check_project() {
 	if [ ! -d "$DOTFILES" ]; then
-		git clone https://github.com/chenxygh/Cdotfiles $DOTFILES
+		git clone --recursive https://github.com/chenxygh/Cdotfiles $DOTFILES
 	fi
 }
 
