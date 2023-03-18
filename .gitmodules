@@ -1,3 +1,6 @@
 [submodule "vim/vim-init"]
 	path = vim/vim-init
 	url = git@github.com:chenxygh/vim-init.git
+[submodule "tmux/.tmux"]
+	path = tmux/.tmux
+	url = git@github.com:chenxygh/.tmux.git
