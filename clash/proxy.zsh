@@ -48,6 +48,11 @@ proxy () {
         echo HTTPS_PROXY: $HTTPS_PROXY
         echo all_proxy: $all_proxy
         echo ALL_PROXY: $ALL_PROXY
+        ps -aux | grep clash
+	elif [ "$1" = "up" ]; then
+        clash
+	elif [ "$1" = "down" ]; then
+        pkill -9 clash
 	fi
 }
 
