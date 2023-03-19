@@ -9,3 +9,5 @@
 	br = branch
 	ad = add
 	cl = clone
+[core]
+	quotepath = false
