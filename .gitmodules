@@ -6,4 +6,4 @@
     url = https://github.com/chenxygh/.tmux.git
 [submodule "Cdotfiles.private"]
 	path = Cdotfiles.private
-	url = https://github.com/chenxygh/Cdotfiles.private.git
+    url = git@github.com:chenxygh/Cdotfiles.git
