@@ -4,6 +4,6 @@
 [submodule "tmux/.tmux"]
 	path = tmux/.tmux
     url = https://github.com/chenxygh/.tmux.git
-[submodule "Cdotfiles.private"]
-	path = Cdotfiles.private
-    url = git@github.com:chenxygh/Cdotfiles.git
+# [submodule "Cdotfiles.private"]
+# 	path = Cdotfiles.private
+#     url = git@github.com:chenxygh/Cdotfiles.git
