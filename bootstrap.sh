@@ -44,9 +44,14 @@ setup_config() {
     cp_file_if_exists ssh/config ~/.ssh
 }
 
+install_common_software () {
+    bash scripts/install.sh
+}
+
 main() {
     check_project
     cd $DOTFILES
+    install_common_software
     setup_config
     cd -
     exec zsh
