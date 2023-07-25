@@ -41,6 +41,9 @@ source_if_exists ~/.zsh_profile
 # git
 . $DOTFILES/git/alias.zsh
 
+# tmux
+. $DOTFILES/tmux/alias.zsh
+
 # 整理 PATH，删除重复路径
 if [ -n "$PATH" ]; then
     old_PATH=$PATH:; PATH=
