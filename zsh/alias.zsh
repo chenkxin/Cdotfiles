@@ -1,4 +1,5 @@
-alias l="ls -al"
+alias l="ls -l"
+alias ll="ls -al"
 alias ccd="cd $HOME/.local/.Cdotfiles"
 alias cn="cd $HOME/MyDocs/notes"
 
