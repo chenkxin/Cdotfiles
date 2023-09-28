@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function execute_on_remote() {
+  local server_list_file="$1"
+  local command_to_run="$2"
+  
+  while IFS= read -r server
+  do
+    echo "Connecting to ${server}..."
+    ssh ${server} "${command_to_run}"
+    echo "Command executed on $server"
+  done < "${server_list_file}"
+}
+
+function scp_to_remote() {
+  local server_list_file="$1"
+  local source="$2"
+  local target="$3"
+  
+  while IFS= read -r server
+  do
+    echo "Scp ${source} to ${server}:${target}..."
+    scp -r "${source}" "${server}:${target}"
+    echo "Done."
+  done < "${server_list_file}"
+}
+
+function scp_from_remote() {
+  local server_list_file="$1"
+  local source="$2"
+  local target="$3"
+  
+  while IFS= read -r server
+  do
+    echo "Scp ${server}:${source} to ${target}..."
+    scp -r "${server}:${source}" "${target}"
+    echo "Done."
+  done < "${server_list_file}"
+}
