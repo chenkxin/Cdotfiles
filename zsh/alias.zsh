@@ -10,7 +10,7 @@ alias tat="tmux attach-session -t"
 alias tls="tmux ls"
 
 # conda
-alias cact="conda activate"
-alias cdea="conda deactivate"
+alias cac="conda activate"
+alias cde="conda deactivate"
 alias ccr="conda create"
 alias crm="conda env remove"
