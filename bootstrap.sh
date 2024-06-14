@@ -1,22 +1,26 @@
+GIT_NAME="chenkxin"
+
 cp_file_if_exists() {
     if [ -f "$1" -a -e $2 ]; then
         cp "$1" "$2"
     fi
 }
 
-DOTFILES=$HOME/.local/.Cdotfiles
+LOCAL_DIR=$HOME/.local
+[ ! -d $LOCAL_DIR ] && mkdir -p "$LOCAL_DIR"
+DOTFILES=$LOCAL_DIR/.Cdotfiles
 
 # initialization for the dotfiles project
 check_project() {
     if [ ! -d "$DOTFILES" ]; then
-        git clone --recursive https://github.com/chenxygh/Cdotfiles $DOTFILES
+        git clone --recursive https://github.com/${GIT_NAME}/Cdotfiles $DOTFILES
     fi
 }
 
 setup_config() {
     # zshrc
-    cp zsh/.zshrc $HOME
-    cp_file_if_exists zsh/.zsh_profile ~
+    cp zsh/.zshrc $HOME/
+    cp_file_if_exists zsh/.zsh_profile $HOME/
     
     # clash
     if [ ! -f $HOME/.local/bin/clash ]; then
@@ -35,13 +39,7 @@ setup_config() {
     cp $DOTFILES/vim/.vimrc $HOME
 
     # git
-    cp git/.gitconfig ~
-
-    # ssh
-    if [ ! -d "$HOME/.ssh" ]; then
-        mkdir $HOME/.ssh
-    fi
-    cp_file_if_exists ssh/config ~/.ssh
+    cp git/.gitconfig $HOME/
 }
 
 install_common_software () {
