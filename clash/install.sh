@@ -14,14 +14,15 @@ set -ex
 dir=$(cd $(dirname $0);pwd)
 
 # 安装 clash，设置环境变量和软链接
-file="${dir}/build/clash-linux-amd64"
+file="clash-linux-amd64"
+src="${dir}/build/${file}"
 LOCAL_BIN_DIR="$HOME/.local/bin"
-[ ! -d $LOCAL_BIN_DIR ] && mkdir -p "$LOCAL_BIN"
-cp $file $HOME/.local/bin/
-ln -s $HOME/.local/bin/$file $HOME/.local/bin/clash
+[ ! -d $LOCAL_BIN_DIR ] && mkdir -p $LOCAL_BIN_DIR
+cp $src $LOCAL_BIN_DIR
+ln -s ${LOCAL_BIN_DIR}/${file} ${LOCAL_BIN_DIR}/clash
 
 # Country.mmdb
 file2="${dir}/build/Country.mmdb"
 CLASH_CONF_DIR="$HOME/.config/clash"
-[ ! -d $CLASH_CONF_DIR ] && mkdir -p "$CLASH_CONF_DIR"
+[ ! -d $CLASH_CONF_DIR ] && mkdir -p $CLASH_CONF_DIR
 cp $file2 $HOME/.config/clash/
