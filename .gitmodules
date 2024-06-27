@@ -1,9 +1,6 @@
 [submodule "vim/vim-init"]
-	path = vim/vim-init
-    url = https://github.com/chenkxin/vim-init.git
+  path = vim/vim-init
+  url = git@github.com:chenkxin/vim-init.git
 [submodule "tmux/.tmux"]
-	path = tmux/.tmux
-    url = https://github.com/chenkxin/.tmux.git
-# [submodule "Cdotfiles.private"]
-# 	path = Cdotfiles.private
-#     url = git@github.com:chenxygh/Cdotfiles.git
+  path = tmux/.tmux
+  url = git@github.com:chenkxin/.tmux.git
