@@ -21,8 +21,5 @@ zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-autosuggestions
 zinit load zdharma-continuum/history-search-multi-word
 zinit light zsh-users/zsh-syntax-highlighting
-zinit snippet OMZ::plugins/autojump
-# zi light-mode wait lucid for \
-    # OMZ::plugins/autojump/autojump.plugin.zsh
 
 TERM="xterm-256color"

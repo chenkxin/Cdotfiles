@@ -36,7 +36,6 @@ source_if_exists ~/.zsh_profile
 
 # clash
 . $DOTFILES/clash/clash.zsh
-. $DOTFILES/clash/proxy.zsh
 
 # git
 . $DOTFILES/git/alias.zsh
