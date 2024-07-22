@@ -28,14 +28,14 @@ setup_config() {
     fi
 
     # tmux
-    ln -sT $DOTFILES/tmux/.tmux/.tmux.conf $HOME/.tmux.conf
+    ln -s $DOTFILES/tmux/.tmux/.tmux.conf $HOME/.tmux.conf
     cp $DOTFILES/tmux/.tmux/.tmux.conf.local $HOME
 
     # vim
     if [ ! -d "$HOME/.vim" ]; then
         mkdir $HOME/.vim
     fi
-    ln -sT $DOTFILES/vim/vim-init $HOME/.vim/vim-init
+    ln -s $DOTFILES/vim/vim-init $HOME/.vim/vim-init
     cp $DOTFILES/vim/.vimrc $HOME
 
     # git

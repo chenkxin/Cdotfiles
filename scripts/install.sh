@@ -2,9 +2,9 @@
 
 OS_NAME=$(uname)
 
-if [ OS_NAME = "Linux" ];then
+if [ ${OS_NAME} = "Linux" ];then
   sudo apt install zsh git tmux autojump vim
-elif [ OS_NAME = "Darwin" ];then
+elif [ ${OS_NAME} = "Darwin" ];then
   brew install git tmux
 else
   echo "System type error, only for Linux or Macos."
