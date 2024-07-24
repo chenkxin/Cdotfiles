@@ -3,7 +3,7 @@
 OS_NAME=$(uname)
 
 if [ ${OS_NAME} = "Linux" ];then
-  sudo apt install zsh git tmux autojump vim
+  sudo apt install zsh git tmux vim
 elif [ ${OS_NAME} = "Darwin" ];then
   brew install git tmux
 else
