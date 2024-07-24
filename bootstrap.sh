@@ -35,7 +35,7 @@ setup_config() {
     if [ ! -d "$HOME/.vim" ]; then
         mkdir $HOME/.vim
     fi
-    ln -s $DOTFILES/vim/vim-init $HOME/.vim/vim-init
+    ln -s $DOTFILES/vim/vim-init $HOME/.vim
     cp $DOTFILES/vim/.vimrc $HOME
 
     # git
