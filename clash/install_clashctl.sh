@@ -144,7 +144,10 @@ setup_cron() {
 install_aliases() {
   for rc in ~/.zshrc ~/.bashrc; do
     [ -f "$rc" ] || continue
-    mapfile -t SMART <<'AL'
+    SMART=()
+    while IFS= read -r line; do
+      SMART+=("$line")
+    done <<'AL'
 # 🧠 实时生效系统代理控制
 alias cpon='export http_proxy="http://127.0.0.1:7890" https_proxy="http://127.0.0.1:7890" all_proxy="socks5h://127.0.0.1:7891"; echo "✅ 系统代理已开启";'
 alias cpoff='unset http_proxy https_proxy all_proxy; echo "🛑 系统代理已关闭";'
